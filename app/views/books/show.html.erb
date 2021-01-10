@@ -20,26 +20,35 @@
 
   <div class="col-md-4">
 
-    <!-- Where the rating/reviews will go -->
-    <%= render @book.reviews %>
-    
-    <div>
-      <%= link_to "Add Review", new_book_review_path(@book) %>
+    <div class="reviews">
+
+      <!-- Where the rating/reviews will go -->
+      <h3>Reviews</h3>
+      <%= render @book.reviews %>
+
+      <div>
+        <%= link_to "Add Review", new_book_review_path(@book) %>
+      </div>
+
     </div>
 
   </div>
 
 </div>
 
-<%= link_to "Back", root_path %>
+<div class="links btn-group">
 
-<% if user_signed_in? %>
+  <%= link_to "Back", root_path %>
 
-  <% if @book.user_id == current_user.id%>
+  <% if user_signed_in? %>
 
-   <%= link_to "Edit", edit_book_path(@book) %>
-   <%= link_to "Delete", book_path(@book), method: :delete, data: { confirm: "Are you sure?"} %>
+    <% if @book.user_id == current_user.id%>
+
+     <%= link_to "Edit", edit_book_path(@book) %>
+     <%= link_to "Delete", book_path(@book), method: :delete, data: { confirm: "Are you sure?" } %>
+
+    <% end %>
 
   <% end %>
 
-<% end %>
+</div>

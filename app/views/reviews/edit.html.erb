@@ -3,5 +3,5 @@
 <%= simple_form_for([@book, @review]) do |f| %>
   <%= f.input :rating %>
   <%= f.input :comment %>
-  <%= f.button :submit %>
+  <%= f.button :submit %> <%= link_to "Back", book_path(@book) %>
 <% end %>
