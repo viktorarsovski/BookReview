@@ -48,8 +48,8 @@
 
     <% if @book.user_id == current_user.id%>
 
-     <%= link_to "Edit", edit_book_path(@book), class: "btn btn-custom" %>
-     <%= link_to "Delete", book_path(@book), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-custom" %>
+     <%= link_to "Edit Book", edit_book_path(@book), class: "btn btn-custom" %>
+     <%= button_to "Delete Book", book_path(@book), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-custom" %>
 
     <% end %>
 
